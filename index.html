@@ -1,0 +1,232 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-04-09 15:18:51
+ * @LastEditTime: 2021-04-09 16:13:21
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \结婚倒计时\index.html
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>恋爱计时</title>
+    <style>
+        
+       
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.bjmp4{
+    position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+            object-fit: cover;
+}
+a,
+img {
+  border: 0;
+}
+
+p {
+  color: #24298f;
+  margin: 0 0 1em !important;
+  font-size: 13px;
+}
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6em;
+  color: #656565;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  background: #fff;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+}
+
+.banner-container {
+  background-image: url("../images/bg.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  /* margin-top:250px; */
+  line-height: 60px;
+  color: #ffffff;
+}
+.heading h2 {
+  font-size: 60px;
+  font-weight: normal;
+  font-weight: 700;
+  height: 140px;
+  line-height: 80px;
+}
+.heading h3 {
+  font-size: 28px;
+  font-weight: 700;
+  text-shadow: -1px -1px 5px rgba(0, 0, 0, 0.33);
+}
+.heading h5 {
+  font-size: 14px;
+}
+
+.countdown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin-top: 210px;
+  line-height: 48px;
+}
+
+.styled div span {
+  display: block;
+  font-size: 16px;
+  margin-top: 0;
+  font-weight: normal;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  margin: 0 9px 8px 9px;
+  height: 28px;
+  line-height: 28px;
+}
+
+.styled div {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 30px;
+  font-weight: normal;
+  text-align: center;
+  height: 100px;
+  text-shadow: none;
+  vertical-align: middle;
+  color: #f44336;
+  margin: 10px 4px;
+  height: auto;
+  width: 112px;
+  border: 1px dashed rgba(255, 255, 255, 0.46);
+}
+
+.copyrights {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 310px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  opacity: 0.6;
+}
+h2 {
+            font-size: 220%;
+            font-weight: 400;
+        }
+        
+        .content {
+            position: absolute;
+            width: 100%;
+            top: 40%;
+            transform: translate(0, -50%);
+            text-align: center;
+        }
+        
+        .timer {
+            font-size: 180%;
+            line-height: 1.5;
+            margin: 1em 0;
+            position: absolute;
+            top:650px;
+            left: 785px;
+        }
+        
+        .timer b {
+            /* color:deeppink */
+            color: rgb(253, 99, 125);
+        }
+
+
+
+    </style>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body background="./3.jpg">
+    <video src="./温馨.mp4" class="bjmp4" autoplay loop muted></video>
+                <div class="banner-container">
+                    <div class="heading">
+                        <h2>范斌 & 俞金支</h2>
+                        <h3>2023年03月29日</h3>
+                        <h3>我们要在一起了</h3>
+                    </div>
+                    <div class="countdown styled"></div>
+                    <div class="copyrights">版权所有;范斌 2023 保留所有权利</div>
+                </div>
+                <span id="timer-days"></span>
+                <div class="timer">
+                    <b id="d"></b> 天 <b id="h"></b> 小时 <b id="m"></b> 分钟 <b id="s"></b> 秒
+                </div>
+            </body>
+            <script>
+                function timer() {
+                    var start = new Date(2023, 3, 29); // 2015.7.2
+                    var t = new Date() - start;
+                    var h = ~~(t / 1000 / 60 / 60 % 24);
+                    if (h < 10) {
+                        h = "0" + h;
+                    }
+                    var m = ~~(t / 1000 / 60 % 60);
+                    if (m < 10) {
+                        m = "0" + m;
+                    }
+        
+                    var s = ~~(t / 1000 % 60);
+                    if (s < 10) {
+                        s = "0" + s;
+                    }
+                    document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+                    document.getElementById('h').innerHTML = h;
+                    document.getElementById('m').innerHTML = m;
+                    document.getElementById('s').innerHTML = s;
+                }
+                timer();
+                setInterval(timer, 1000);
+            </script>
+       
+
+       
+      
+        
+
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.countdown.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+  </body>
+</html>
+
+
+
