@@ -155,20 +155,25 @@ h2 {
             text-align: center;
         }
         
-        .timer {
-            font-size: 180%;
-            line-height: 1.5;
-            margin: 1em 0;
-            position: absolute;
-            top: 1150px;
-            left: 348px;
-        }
         
+        
+        .timer{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          margin-top: 150px;
+          font-size: 14px;
+          color: #fff;
+          text-align: center;
+          opacity: 9;
+          
+        }
         .timer b {
             /* color:deeppink */
             color: rgb(253, 99, 125);
         }
-
+        
 
 
     </style>
@@ -182,15 +187,15 @@ h2 {
                     <div class="heading">
                         <h2>范斌 & 俞金支</h2>
                         <h3>2023年03月29日</h3>
-                        <h3>我们要在一起了</h3>
+                        <h3>我们在一起了</h3>
                     </div>
                     <div class="countdown styled"></div>
                     <div class="copyrights">版权所有;范斌 2023 保留所有权利</div>
+                    <div class="timer">
+                      <b id="d"></b> 天 <b id="h"></b> 小时 <b id="m"></b> 分钟 <b id="s"></b> 秒
+                    </div>
                 </div>
                 <span id="timer-days"></span>
-                <div class="timer">
-                    <b id="d"></b> 天 <b id="h"></b> 小时 <b id="m"></b> 分钟 <b id="s"></b> 秒
-                </div>
             </body>
             <script>
                 function timer() {
