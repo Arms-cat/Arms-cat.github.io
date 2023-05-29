@@ -34,9 +34,9 @@ img {
 }
 
 p {
-  color: #24298f;
+  color:#fff;
   margin: 0 0 1em !important;
-  font-size: 13px;
+  font-size: 50px;
 }
 body {
   font-family: "Open Sans", Arial, sans-serif;
@@ -173,6 +173,7 @@ h2 {
             /* color:deeppink */
             color: rgb(253, 99, 125);
         }
+      
         
 
 
@@ -186,41 +187,42 @@ h2 {
                 <div class="banner-container">
                     <div class="heading">
                         <h2>范斌 & 俞金支</h2>
-                        <h3>2023年03月29日</h3>
-                        <h3>我们在一起了</h3>
+                        <h3>2023.03.29-2023.5.30</h3>
+                        
                     </div>
                     <div class="countdown styled"></div>
                     <div class="copyrights">版权所有;范斌 2023 保留所有权利</div>
                     <div class="timer">
-                      <b id="d"></b> 天 <b id="h"></b> 小时 <b id="m"></b> 分钟 <b id="s"></b> 秒
+                      <!-- <b id="d"></b> 天 <b id="h"></b> 小时 <b id="m"></b> 分钟 <b id="s"></b> 秒 -->
+                      <p id="hs">62天01小时57分钟54秒</p>
                     </div>
                 </div>
                 <span id="timer-days"></span>
             </body>
             <script>
-                function timer() {
-                    var start = new Date(2023, 2, 29); // 2015.7.2
-                    var t = new Date() - start;
-                    var h = ~~(t / 1000 / 60 / 60 % 24);
-                    if (h < 10) {
-                        h = "0" + h;
-                    }
-                    var m = ~~(t / 1000 / 60 % 60);
-                    if (m < 10) {
-                        m = "0" + m;
-                    }
+                // function timer() {
+                //     var start = new Date(2023, 2, 29); // 2015.7.2
+                //     var t = new Date() - start;
+                //     var h = ~~(t / 1000 / 60 / 60 % 24);
+                //     if (h < 10) {
+                //         h = "0" + h;
+                //     }
+                //     var m = ~~(t / 1000 / 60 % 60);
+                //     if (m < 10) {
+                //         m = "0" + m;
+                //     }
         
-                    var s = ~~(t / 1000 % 60);
-                    if (s < 10) {
-                        s = "0" + s;
-                    }
-                    document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
-                    document.getElementById('h').innerHTML = h;
-                    document.getElementById('m').innerHTML = m;
-                    document.getElementById('s').innerHTML = s;
-                }
-                timer();
-                setInterval(timer, 1000);
+                //     var s = ~~(t / 1000 % 60);
+                //     if (s < 10) {
+                //         s = "0" + s;
+                //     }
+                //     document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+                //     document.getElementById('h').innerHTML = h;
+                //     document.getElementById('m').innerHTML = m;
+                //     document.getElementById('s').innerHTML = s;
+                // }
+                // timer();
+                // setInterval(timer, 1000);
             </script>
        
 
